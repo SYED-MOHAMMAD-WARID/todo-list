@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+  <script src="tailwind.js"></script>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center p-4">
+  <div class="bg-white/90 backdrop-blur w-full max-w-md rounded-2xl shadow-2xl p-6">
+
+    <div class="text-center mb-4">
+      <h1 class="text-3xl font-extrabold text-indigo-700">My To-Do List</h1>
+      <p id="clock" class="text-gray-500 text-sm mt-1"></p>
+    </div>
+
+    <div id="banner" class="hidden bg-red-500 text-white rounded-lg p-3 mb-4 flex items-center justify-between animate-pulse">
+      <span id="banner-text" class="font-semibold"></span>
+      <button id="stop-btn" class="bg-white text-red-600 px-3 py-1 rounded-md font-bold">Stop</button>
+    </div>
+
+    <form id="todo-form" class="flex flex-col sm:flex-row gap-2 mb-2">
+      <input id="todo-input" type="text" placeholder="Add a task..."
+        class="flex-1 border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400">
+      <input id="alarm-input" type="time" title="Alarm time (optional)"
+        class="border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400">
+      <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg font-semibold transition">Add</button>
+    </form>
+    <p class="text-xs text-gray-400 mb-4">Set a time to get an alarm for that task (optional).</p>
+
+    <p id="next-alarm" class="text-sm text-indigo-600 font-semibold mb-3"></p>
+
+    <ul id="todo-list" class="space-y-2"></ul>
+    <p id="count" class="text-sm text-gray-500 mt-4 text-center"></p>
+    <div class="flex gap-2 justify-center mt-4">
+  <button id="export-btn" class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-lg text-sm font-semibold hover:bg-indigo-200">Backup</button>
+  <label class="bg-purple-100 text-purple-700 px-3 py-1 rounded-lg text-sm font-semibold hover:bg-purple-200 cursor-pointer">
+    Restore
+    <input id="import-input" type="file" accept=".json" class="hidden">
+  </label>
+</div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
